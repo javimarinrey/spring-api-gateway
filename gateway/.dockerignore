@@ -1,0 +1,31 @@
+# Ignorar salidas de compilación
+target/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales de edición
+*.swp
+*.swo
+*.tmp
+
+# Configuración de IDEs
+.idea/
+*.iml
+*.vscode/
+
+# Archivos de Git
+.git/
+.gitignore
+
+# Archivos de logs
+*.log
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Otros archivos innecesarios
+*.bak
+*.old

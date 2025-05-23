@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+logging:
+  file:
+    name: /apps/logs/gateway.log
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: demo1
+          uri: http://demo1:8081
+          predicates:
+            - Path=/demo1/**
+          filters:
+            - StripPrefix=0
+
+        - id: demo2
+          uri: http://demo2:8082
+          predicates:
+            - Path=/demo2/**
+          filters:
+            - StripPrefix=0

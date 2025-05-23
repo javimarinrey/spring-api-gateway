@@ -1,0 +1,24 @@
+services:
+  gateway:
+    build: ./gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - demo1
+      - demo2
+    volumes:
+      - ./logs:/apps/logs
+
+  demo1:
+    build: ./demo1
+    ports:
+      - "8081" # expone el puerto SOLO internamente, no al host
+    volumes:
+      - ./logs:/apps/logs
+
+  demo2:
+    build: ./demo2
+    ports:
+      - "8082" # expone el puerto SOLO internamente, no al host
+    volumes:
+      - ./logs:/apps/logs
